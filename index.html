@@ -69,7 +69,6 @@
         .hero h1 span { color: var(--neon-blue); text-shadow: 0 0 15px var(--neon-blue); }
         .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; line-height: 1.6; }
 
-        /* Botón CTA (Llamado a la acción) */
         .btn-neon {
             display: inline-flex; align-items: center; gap: 10px;
             background: transparent; color: var(--neon-blue);
@@ -103,21 +102,18 @@
             display: flex; flex-direction: column;
         }
         .card:hover {
-            border-color: var(--neon-purple);
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
             transform: translateY(-5px);
         }
 
-        /* Imagen o Placeholder de la App */
-        .card-img-container { height: 200px; width: 100%; background: #1a1a1a; position: relative; display: flex; justify-content: center; align-items: center;}
-        .card-img { width: 100%; height: 100%; object-fit: cover; }
+        .card-img-container { height: 200px; width: 100%; background: #1a1a1a; position: relative; }
         
-        /* Placeholder para cuando aún no tienes la imagen 3D */
-        .placeholder { background: linear-gradient(45deg, #121212, #2a0845); width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--neon-purple); }
-        .placeholder .material-icons { font-size: 60px; margin-bottom: 10px; text-shadow: 0 0 15px var(--neon-purple); }
+        .placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .placeholder .material-icons { font-size: 60px; margin-bottom: 10px; }
 
         .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-tag { font-size: 11px; background: #333; padding: 3px 8px; border-radius: 20px; display: inline-block; margin-bottom: 10px; color: var(--neon-blue); font-weight: bold; width: fit-content; }
+        .card-tag { font-size: 11px; background: #333; padding: 3px 8px; border-radius: 20px; display: inline-block; margin-bottom: 10px; color: #fff; font-weight: bold; width: fit-content; }
         .card-title { font-size: 20px; margin-bottom: 10px; }
         .card-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; flex-grow: 1;}
 
@@ -127,7 +123,7 @@
             border: 1px solid #444; transition: 0.3s;
             display: flex; justify-content: center; align-items: center; gap: 8px;
         }
-        .card:hover .btn-download { background: var(--neon-purple); border-color: var(--neon-purple); }
+        .card:hover .btn-download { background: var(--neon-blue); color: #000; border-color: var(--neon-blue); box-shadow: 0 0 10px var(--neon-blue);}
 
         /* === FOOTER Y APOYO === */
         footer { background: #0a0a0c; padding: 40px 20px; text-align: center; border-top: 1px solid #222; margin-top: 50px; }
@@ -144,7 +140,7 @@
 
         @media(max-width: 768px) {
             header { padding: 15px 20px; }
-            .nav-links { display: none; } /* Ocultar en móviles por ahora */
+            .nav-links { display: none; }
             .hero h1 { font-size: 35px; }
         }
     </style>
@@ -172,87 +168,169 @@
 
     <!-- CATÁLOGO DE APPS -->
     <section id="catalogo" class="catalog">
-        <h2 class="section-title">Colección Destacada</h2>
+        <h2 class="section-title">Colección Oficial</h2>
         
         <div class="grid">
             
-            <!-- APP 1: CON IMAGEN (EJEMPLO) -->
+            <!-- 1. MULTICHAT -->
             <div class="card">
                 <div class="card-img-container">
-                    <!-- Si ya tienes la imagen 3D, ponla aquí -->
-                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #001f3f); color: var(--neon-blue);">
-                        <span class="material-icons">hub</span>
-                        <span style="font-weight: bold;">Social Hub Ultimate</span>
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #002b12); color: #25D366;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #25D366;">forum</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #25D366;">MultiChat Pro</span>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="card-tag">Redes Sociales</div>
-                    <h3 class="card-title">Social Media Hub</h3>
-                    <p class="card-desc">Tus redes (Facebook, X, Reddit, Pinterest) en un solo lugar. Entornos aislados con cuentas públicas y privadas bajo candado.</p>
-                    <a href="TU_LINK_DE_MEGA_AQUI" target="_blank" class="btn-download">
-                        <span class="material-icons">cloud_download</span> Descargar (.zip)
-                    </a>
+                    <div class="card-tag" style="color: #25D366;">Mensajería</div>
+                    <h3 class="card-title">MultiChat</h3>
+                    <p class="card-desc">Maneja WhatsApp, Telegram, Signal y más. Separa tu vida personal y laboral en entornos encriptados totalmente independientes.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
                 </div>
             </div>
 
-            <!-- APP 2: CON PLACEHOLDER (CUANDO AÚN NO TIENES IMAGEN) -->
+            <!-- 2. SOCIAL HUB -->
             <div class="card">
                 <div class="card-img-container">
-                    <!-- Placeholder con color rojo para Fluxy-Vision -->
-                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #3a0000); color: #ff4d4d;">
-                        <span class="material-icons">play_circle_filled</span>
-                        <span style="font-weight: bold;">Fluxy-Vision</span>
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #001f3f); color: #1877F2;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #1877F2;">hub</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #1877F2;">Social Media Hub</span>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="card-tag">Multimedia</div>
+                    <div class="card-tag" style="color: #1877F2;">Redes Sociales</div>
+                    <h3 class="card-title">Social Media Hub</h3>
+                    <p class="card-desc">Todas tus redes (Facebook, X, Reddit, TikTok) en un solo lugar. Entornos aislados con cuentas públicas y privadas bajo candado.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
+                </div>
+            </div>
+
+            <!-- 3. FLUXY VISION -->
+            <div class="card">
+                <div class="card-img-container">
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #3a0000); color: #ff0000;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #ff0000;">play_circle_filled</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #ff0000;">Fluxy-Vision</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag" style="color: #ff0000;">Multimedia</div>
                     <h3 class="card-title">Fluxy-Vision</h3>
                     <p class="card-desc">Reproductor unificado para YouTube, Rumble, Dailymotion y Odysee. Fija la ventana por encima de todo mientras trabajas.</p>
-                    <a href="TU_LINK_DE_MEGA_AQUI" target="_blank" class="btn-download">
-                        <span class="material-icons">cloud_download</span> Descargar (.zip)
-                    </a>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
                 </div>
             </div>
 
-            <!-- APP 3: JARVIS -->
+            <!-- 4. STREAM HUB -->
             <div class="card">
                 <div class="card-img-container">
-                    <!-- Placeholder con color púrpura -->
-                    <div class="placeholder">
-                        <span class="material-icons">auto_awesome</span>
-                        <span style="font-weight: bold;">Jarvis Multiverse</span>
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #2a0033); color: #00f0ff;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #00f0ff;">live_tv</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #00f0ff;">Stream Hub</span>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="card-tag">Inteligencia Artificial</div>
+                    <div class="card-tag" style="color: #00f0ff;">Entretenimiento</div>
+                    <h3 class="card-title">Stream Hub</h3>
+                    <p class="card-desc">Centro de TV en vivo y películas (PlutoTV, MercadoPlay, Vix). 100% legal, soporte pantalla completa y sin caídas.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
+                </div>
+            </div>
+
+            <!-- 5. MEGAN MULTICUENTAS -->
+            <div class="card">
+                <div class="card-img-container">
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #330000); color: #d9272e;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #d9272e;">cloud</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #d9272e;">Megan Multicuentas</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag" style="color: #d9272e;">Almacenamiento</div>
+                    <h3 class="card-title">Megan Multicuentas</h3>
+                    <p class="card-desc">Gestor de 6 cuentas simultáneas de MEGA. Importa carpetas al instante y descarga sin cruzar los historiales de tus perfiles.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
+                </div>
+            </div>
+
+            <!-- 6. JARVIS MULTIVERSE -->
+            <div class="card">
+                <div class="card-img-container">
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #1a0033); color: #8a2be2;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #8a2be2;">auto_awesome</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #8a2be2;">Jarvis Multiverse</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag" style="color: #8a2be2;">Inteligencia Artificial</div>
                     <h3 class="card-title">Jarvis Multiverse</h3>
-                    <p class="card-desc">ChatGPT, Copilot, Gemini y Claude en un solo centro de comando de 0 consumo de RAM en reposo.</p>
-                    <a href="TU_LINK_DE_MEGA_AQUI" target="_blank" class="btn-download">
-                        <span class="material-icons">cloud_download</span> Descargar (.zip)
-                    </a>
+                    <p class="card-desc">ChatGPT, Copilot, Gemini y Claude en un solo centro de comando de alto rendimiento. Memoria RAM intacta al iniciar.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
                 </div>
             </div>
 
-            <!-- APP 4: MULTICHAT -->
+            <!-- 7. GOGLERS HUB -->
             <div class="card">
                 <div class="card-img-container">
-                    <!-- Placeholder verde para Chat -->
-                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #002b12); color: #00ff6a;">
-                        <span class="material-icons">forum</span>
-                        <span style="font-weight: bold;">MultiChat</span>
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #332a00); color: #fdd663;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #fdd663;">search</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #fdd663;">Goglers Hub</span>
                     </div>
                 </div>
                 <div class="card-content">
-                    <div class="card-tag">Mensajería</div>
-                    <h3 class="card-title">MultiChat Pro</h3>
-                    <p class="card-desc">Maneja WhatsApp, Telegram y más. Separa tu vida personal y laboral en entornos encriptados totalmente independientes.</p>
-                    <a href="TU_LINK_DE_MEGA_AQUI" target="_blank" class="btn-download">
-                        <span class="material-icons">cloud_download</span> Descargar (.zip)
-                    </a>
+                    <div class="card-tag" style="color: #fdd663;">Productividad</div>
+                    <h3 class="card-title">Goglers Hub</h3>
+                    <p class="card-desc">Navegador multi-perfil especializado. Maneja hasta 8 cuentas independientes de Google sin la molestia de cerrar sesión.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
                 </div>
             </div>
 
-            <!-- Puedes copiar y pegar el bloque <div class="card">...</div> para tus 20 apps -->
+            <!-- 8. FACEBOT -->
+            <div class="card">
+                <div class="card-img-container">
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #001a33); color: #4e9dff;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #4e9dff;">facebook</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #4e9dff;">Facebot Multi cuenta</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag" style="color: #4e9dff;">Redes Sociales</div>
+                    <h3 class="card-title">Facebot</h3>
+                    <p class="card-desc">Cliente dedicado exclusivo para Facebook. Modo oscuro nativo forzado y gestión de perfiles comerciales y personales.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
+                </div>
+            </div>
+
+            <!-- 9. PINTERETS MULTICUENTA -->
+            <div class="card">
+                <div class="card-img-container">
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #33000a); color: #E60023;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #E60023;">collections</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #E60023;">Pinterets Multicuenta</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag" style="color: #E60023;">Inspiración & Diseño</div>
+                    <h3 class="card-title">Pinterets Multicuenta</h3>
+                    <p class="card-desc">Navega sin límites bloqueando molestos banners de registro. Ideal para diseñadores con múltiples tableros de inspiración.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
+                </div>
+            </div>
+
+            <!-- 10. TJ UNIVERSE -->
+            <div class="card">
+                <div class="card-img-container">
+                    <div class="placeholder" style="background: linear-gradient(45deg, #000, #14002b); color: #4cc9f0;">
+                        <span class="material-icons" style="text-shadow: 0 0 15px #4cc9f0;">menu_book</span>
+                        <span style="font-weight: bold; text-shadow: 0 0 10px #4cc9f0;">TJ Universe</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tag" style="color: #4cc9f0;">Estudio & Referencia</div>
+                    <h3 class="card-title">TJ Universe</h3>
+                    <p class="card-desc">Biblioteca digital y entorno de estudio unificado. Incluye gestor de descargas integrado y optimización de lectura.</p>
+                    <a href="URL_MEGA_AQUI" target="_blank" class="btn-download"><span class="material-icons">cloud_download</span> Descargar (.zip)</a>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -261,21 +339,21 @@
     <footer id="apoyo">
         <div class="support-box">
             <h3 style="color: #fff; margin-bottom: 10px;">¿Te sirve mi Software?</h3>
-            <p>Estas aplicaciones son 100% gratuitas y sin publicidad. Si quieres apoyar el desarrollo y mantenimiento del proyecto, puedes invitarme un café o unirte a la comunidad.</p>
+            <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si quieres apoyar el desarrollo del proyecto, puedes invitarme un café.</p>
             
             <!-- BOTÓN CAFECITO -->
             <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-neon btn-coffee">
                 <span class="material-icons">coffee</span> Ayúdame con un Cafecito
             </a>
 
-            <!-- BOTÓN TELEGRAM (Para cuando lo crees) -->
+            <!-- BOTÓN TELEGRAM -->
             <a href="https://t.me/TU_CANAL_DE_TELEGRAM" target="_blank" class="btn-neon btn-telegram" id="comunidad">
-                <span class="material-icons">telegram</span> Únete al Telegram
+                <span class="material-icons">telegram</span> Únete a la Comunidad
             </a>
         </div>
         
         <div class="copyright">
-            <p><strong>IMPORTANTE:</strong> Todo el software proporcionado es para uso educativo y personal. El usuario es el único responsable de su utilización.</p>
+            <p><strong>IMPORTANTE:</strong> Todo el software proporcionado es para uso educativo y personal. El usuario es el responsable de su utilización.</p>
             <p>&copy; 2024 Código Neuronal - Software full. Todos los derechos reservados.</p>
         </div>
     </footer>
