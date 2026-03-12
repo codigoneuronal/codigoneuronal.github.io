@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jarvis Multiverse | Código Neuronal</title>
+    <title>Multichat | Código Neuronal</title>
     <!-- Fuentes (Incluye Orbitron para el Logo) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Orbitron:wght@700;900&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,6 +20,12 @@
         html, body { margin: 0; padding: 0; background-color: var(--bg-base); color: var(--text-main); font-family: 'Roboto', sans-serif; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin: 0; }
         a { text-decoration: none; color: inherit; }
+
+        /* === TABLA DE REQUISITOS === */
+.req-table { width: 100%; border-collapse: collapse; background: #1a1a1a; border-radius: 8px; overflow: hidden; margin-bottom: 50px; border: 1px solid #333;}
+.req-table tr:nth-child(even) { background: #121212; }
+.req-table td { padding: 15px 20px; color: #ccc; border-bottom: 1px solid #222; font-size: 14px;}
+.req-table td:first-child { font-weight: bold; color: var(--app-color); width: 30%; border-right: 1px solid #222;}
 
         /* === NAVBAR Y LOGO ESTANDARIZADO === */
         header { background: rgba(18, 18, 18, 0.9); border-bottom: 1px solid #333; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; }
@@ -150,6 +156,33 @@
             </div>
         </div>
 
+        <!-- === REQUISITOS DEL SISTEMA === -->
+<div class="features-section" style="padding: 0; background: transparent; border: none; margin-bottom: 50px;">
+    <h2 style="font-size: 28px; margin-bottom: 20px; color: #fff; border: none;">Requisitos del Sistema</h2>
+    <table class="req-table">
+        <tr>
+            <td>Sistema Operativo:</td>
+            <td>Windows 10 / Windows 11 (64-bits)</td>
+        </tr>
+        <tr>
+            <td>Memoria RAM:</td>
+            <td>2 GB mínimo (4 GB recomendados para multitarea)</td>
+        </tr>
+        <tr>
+            <td>Almacenamiento:</td>
+            <td>150 MB (Espacio libre en disco)</td>
+        </tr>
+        <tr>
+            <td>Conexión a Internet:</td>
+            <td>Banda ancha requerida (Para streaming y sincronización)</td>
+        </tr>
+        <tr>
+            <td>Instalación:</td>
+            <td>No requiere. Software 100% Portable.</td>
+        </tr>
+    </table>
+</div>
+
         <!-- FAQ Y LEGAL -->
         <div class="faq-box">
             <h4>¿Requiere internet para funcionar?</h4>
@@ -171,21 +204,21 @@
             <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si deseas apoyar el desarrollo del proyecto invitándome un cafecito.</p>
             
             <div class="footer-buttons">
-                <!-- Botón Cafecito -->
-                <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
-                    <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
-                </a>
+    <!-- Botón Cafecito -->
+    <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
+        <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
+    </a>
 
-                <!-- Botón Telegram -->
-                <a href="https://t.me/TU_CANAL" target="_blank" class="btn-solid btn-telegram-solid">
-                    <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
-                </a>
+    <!-- Botón Telegram -->
+    <a href="https://t.me/codigo_neuronal" target="_blank" class="btn-solid btn-telegram-solid">
+        <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
+    </a>
 
-                <!-- Botón Facebook -->
-                <a href="https://facebook.com/TU_PAGINA" target="_blank" class="btn-solid btn-facebook-solid">
-                    <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
-                </a>
-            </div>
+    <!-- Botón Facebook -->
+    <a href="https://www.facebook.com/codigoneuronal" target="_blank" class="btn-solid btn-facebook-solid">
+        <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
+    </a>
+</div>
         </div>
         
         <div class="copyright">
