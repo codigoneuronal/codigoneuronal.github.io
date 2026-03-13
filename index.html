@@ -27,19 +27,18 @@
         
         /* LOGO FUTURISTA (AZUL Y NARANJA FUERTE) */
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none;}
-        .logo-img { width: 38px; height: 38px; object-fit: contain; filter: none; }
-        .logo-text { 
-            font-size: 25px; 
-            font-weight: 900; 
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-            /* DEGRADADO CORREGIDO: Azul brillante a Naranja Fuerte (#ff5500) */
-            background: linear-gradient(135deg, #00a8ff 0%, #ff5500 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: none; 
-            margin: 0;
-        }
+        .logo-img { width: 52px; height: 52px; object-fit: contain; filter: none; }
+.logo-text { 
+    font-size: 30px; 
+    font-weight: 900; 
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00a8ff 0%, #ff5500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none; 
+    margin: 0;
+}
         
         .nav-links { display: flex; gap: 20px; align-items: center;}
         .nav-links a { font-weight: 700; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
@@ -91,22 +90,57 @@
 
         .copyright { font-size: 13px; color: #666; line-height: 1.6; max-width: 800px; margin: 0 auto;}
         .copyright strong { color: #888; }
+
+        /* === MENÚ MÓVIL (SANDWICH) === */
+        .menu-toggle { display: none; color: #fff; cursor: pointer; }
+        .menu-toggle .material-icons { font-size: 35px; }
+
+        @media(max-width: 768px) {
+            header { padding: 15px 20px; }
+            .menu-toggle { display: block; }
+            
+            /* El menú oculto que baja */
+            .nav-links {
+                display: none; /* Oculto por defecto */
+                position: absolute;
+                top: 70px; left: 0; width: 100%;
+                background: rgba(10, 10, 12, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 20px 0;
+                text-align: center;
+                border-bottom: 2px solid var(--neon-blue);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+            }
+            .nav-links.active { display: flex; } /* Clase que activa el JS */
+            .nav-links a { padding: 15px 0; font-size: 16px; border-bottom: 1px solid #222; }
+            .nav-links a:last-child { border-bottom: none; }
+            
+            /* Ajustes de tarjeta para móvil */
+            .hero h1 { font-size: 35px; }
+            .logo-text { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- LOGO ACTUALIZADO (Con colores Azul a Naranja Fuerte) -->
         <a href="#" class="logo-container">
-            <img src="logo-neuronal.png" alt="Logo" class="logo-img">
+            <img src="img/logo-neuronal.png" alt="Logo" class="logo-img">
             <div class="logo-text">Código Neuronal</div>
         </a>
-        <div class="nav-links">
-    <a href="index.html">Catálogo</a>
-    <a href="cursos.html">Cursos</a>
-    <a href="https://t.me/codigo_neuronal" target="_blank">Comunidad</a>
-    <a href="https://cafecito.app/codigoneuronal" target="_blank" style="color: var(--neon-blue);">Apoyar Proyecto</a>
-</div>
+        
+        <!-- EL BOTÓN SANDWICH -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="material-icons">menu</span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#catalogo">Catálogo</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="https://t.me/codigo_neuronal" target="_blank">Comunidad</a>
+            <a href="https://cafecito.app/codigoneuronal" target="_blank" style="color: var(--neon-blue);">Apoyar Proyecto</a>
+        </div>
     </header>
 
     <section class="hero">
@@ -120,10 +154,10 @@
         <h2 class="section-title">Colección Oficial</h2>
         <div class="grid">
             
-            <!-- 1. JARVIZ MULTIVERSE -->
+            <!-- 1. JARVIS MULTIVERSE -->
             <a href="app-jarvis.html" class="card" onmouseover="this.style.borderColor='#8a2be2'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-jarviz.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-jarviz.png" alt="Jarvis Multiverse" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #8a2be2; font-size: 11px; font-weight:bold; margin-bottom:10px;">Inteligencia Artificial</div>
@@ -136,7 +170,7 @@
             <!-- 2. MULTICHAT -->
             <a href="app-multichat.html" class="card" onmouseover="this.style.borderColor='#25D366'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-multichat.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-multichat.png" alt="MultiChat Pro" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #25D366; font-size: 11px; font-weight:bold; margin-bottom:10px;">Mensajería</div>
@@ -149,7 +183,7 @@
             <!-- 3. SOCIAL HUB -->
             <a href="app-social.html" class="card" onmouseover="this.style.borderColor='#1877F2'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-social.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-social.png" alt="Social Media Hub" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #1877F2; font-size: 11px; font-weight:bold; margin-bottom:10px;">Redes Sociales</div>
@@ -162,7 +196,7 @@
             <!-- 4. FLUXY VISION -->
             <a href="app-fluxy.html" class="card" onmouseover="this.style.borderColor='#ff0000'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-fluxy.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-fluxy.png" alt="Fluxy-Vision" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #ff0000; font-size: 11px; font-weight:bold; margin-bottom:10px;">Multimedia</div>
@@ -175,7 +209,7 @@
             <!-- 5. STREAM HUB -->
             <a href="app-stream.html" class="card" onmouseover="this.style.borderColor='#00f0ff'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                  <img src="img/portada-stream.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-stream.png" alt="Stream Hub" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #00f0ff; font-size: 11px; font-weight:bold; margin-bottom:10px;">Entretenimiento</div>
@@ -188,7 +222,7 @@
             <!-- 6. MEGAN MULTICUENTAS -->
             <a href="app-megan.html" class="card" onmouseover="this.style.borderColor='#d9272e'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-megan.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-megan.png" alt="Megan Multicuentas" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #d9272e; font-size: 11px; font-weight:bold; margin-bottom:10px;">Almacenamiento</div>
@@ -201,8 +235,8 @@
             <!-- 7. GOGLERS HUB -->
             <a href="app-goglers.html" class="card" onmouseover="this.style.borderColor='#fdd663'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-goglers.png" alt="Portada de la App" class="card-img">
-               </div>
+                    <img src="img/portada-goglers.png" alt="Goglers Hub" class="card-img">
+                </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #fdd663; font-size: 11px; font-weight:bold; margin-bottom:10px;">Productividad</div>
                     <h3 class="card-title">Goglers Hub</h3>
@@ -214,8 +248,8 @@
             <!-- 8. FACEBOT -->
             <a href="app-facebot.html" class="card" onmouseover="this.style.borderColor='#4e9dff'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                 <img src="img/portada-facebot.png" alt="Portada de la App" class="card-img">
-                  </div>
+                    <img src="img/portada-facebot.png" alt="Facebot Multi cuenta" class="card-img">
+                </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #4e9dff; font-size: 11px; font-weight:bold; margin-bottom:10px;">Redes Sociales</div>
                     <h3 class="card-title">Facebot</h3>
@@ -227,7 +261,7 @@
             <!-- 9. PINTERETS MULTICUENTA -->
             <a href="app-pinterets.html" class="card" onmouseover="this.style.borderColor='#E60023'" onmouseout="this.style.borderColor='#333'">
                 <div class="card-img-container">
-                  <img src="img/portada-pinterets.png" alt="Portada de la App" class="card-img">
+                    <img src="img/portada-pinterets.png" alt="Pinterets Hub" class="card-img">
                 </div>
                 <div class="card-content">
                     <div class="card-tag" style="color: #E60023; font-size: 11px; font-weight:bold; margin-bottom:10px;">Inspiración & Diseño</div>
@@ -240,28 +274,28 @@
         </div>
     </section>
 
-    <!-- === FOOTER (PIE DE PÁGINA) === -->
+    <!-- === FOOTER ACTUALIZADO === -->
     <footer>
         <div class="support-box">
             <h3>¿Te sirve mi Software?</h3>
-            <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si deseas apoyar el desarrollo del proyecto invitándome un cafecito.</p>
+            <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si deseas apoyar el desarrollo del proyecto invitáme un cafecito.</p>
             
             <div class="footer-buttons">
-    <!-- Botón Cafecito -->
-    <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
-        <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
-    </a>
+                <!-- Botón Cafecito -->
+                <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
+                    <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
+                </a>
 
-    <!-- Botón Telegram -->
-    <a href="https://t.me/codigo_neuronal" target="_blank" class="btn-solid btn-telegram-solid">
-        <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
-    </a>
+                <!-- Botón Telegram -->
+                <a href="https://t.me/codigo_neuronal" target="_blank" class="btn-solid btn-telegram-solid">
+                    <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
+                </a>
 
-    <!-- Botón Facebook -->
-    <a href="https://www.facebook.com/codigoneuronal" target="_blank" class="btn-solid btn-facebook-solid">
-        <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
-    </a>
-</div>
+                <!-- Botón Facebook -->
+                <a href="https://www.facebook.com/codigoneuronal" target="_blank" class="btn-solid btn-facebook-solid">
+                    <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
+                </a>
+            </div>
         </div>
         
         <div class="copyright">
@@ -270,8 +304,12 @@
         </div>
     </footer>
 
-    <!-- Script para actualizar el año automáticamente -->
+    <!-- Script para Menú Móvil y Año Automático -->
     <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
         const baseYear = 2026; 
         const currentYear = new Date().getFullYear();
         const displayYear = currentYear > baseYear ? currentYear : baseYear;
