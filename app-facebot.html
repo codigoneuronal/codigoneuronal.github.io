@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebot | Código Neuronal</title>
-    <!-- Fuentes (Incluye Orbitron para el Logo) -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Orbitron:wght@700;900&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
@@ -12,7 +12,7 @@
         :root {
             --bg-base: #050505; 
             --bg-card: #121212;
-            --app-color: #4e9dff; /* COLOR PRINCIPAL DE LA APP */
+            --app-color: #4e9dff; /* COLOR PRINCIPAL: Azul Facebot */
             --neon-blue: #00f0ff;
             --text-main: #e0e0e0; 
             --text-muted: #aaa;
@@ -27,24 +27,15 @@
         .req-table td { padding: 15px 20px; color: #ccc; border-bottom: 1px solid #222; font-size: 14px;}
         .req-table td:first-child { font-weight: bold; color: var(--app-color); width: 30%; border-right: 1px solid #222;}
 
-        /* === NAVBAR Y LOGO ESTANDARIZADO === */
-        /* Padding reducido a 8px para que la barra no se engorde con el logo grande */
+        /* === NAVBAR Y LOGO === */
         header { background: rgba(18, 18, 18, 0.9); border-bottom: 1px solid #333; padding: 8px 50px; display: flex; justify-content: space-between; align-items: center; }
         
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none;}
-        
-        /* LOGO A 48px (Corregido el error de los dos puntos) */
-        .logo-img { width: 60px; height: 60px; object-fit: contain; filter: none; }
+        .logo-img { width: 48px; height: 48px; object-fit: contain; filter: none; }
         .logo-text { 
-            font-size: 30px; 
-            font-weight: 900; 
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
+            font-size: 30px; font-weight: 900; font-family: 'Orbitron', sans-serif; letter-spacing: 1px;
             background: linear-gradient(135deg, #00a8ff 0%, #ff5500 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: none; 
-            margin: 0;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; margin: 0;
         }
 
         .btn-back { display: flex; align-items: center; gap: 5px; color: #888; font-weight: bold; transition: 0.3s; }
@@ -53,57 +44,41 @@
         /* === CONTENIDO DE LA APP === */
         .app-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
         
-        /* Layout Superior */
         .app-hero { display: flex; gap: 50px; align-items: center; margin-bottom: 80px; }
         .app-info { flex: 1; }
         .app-title { font-size: 45px; font-weight: 900; margin-bottom: 10px; color: #fff; text-shadow: 0 0 15px var(--app-color); }
         .app-subtitle { font-size: 20px; color: var(--text-muted); margin-bottom: 30px; line-height: 1.5; }
         
-        /* Botón de Descarga Gigante */
         .btn-download-big {
             display: inline-flex; align-items: center; gap: 15px;
             background: var(--app-color); color: #fff;
             padding: 18px 40px; font-size: 18px; font-weight: bold;
             border-radius: 8px; text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); transition: 0.3s;
+            box-shadow: 0 0 20px rgba(78, 157, 255, 0.4); transition: 0.3s;
         }
         .btn-download-big:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--app-color); color: #fff;}
 
-        /* Imagen Principal 3D */
         .app-showcase { flex: 1; display: flex; justify-content: center; }
         .box-img { width: 100%; max-width: 480px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 2px solid var(--app-color); object-fit: cover; }
 
-        /* === CARACTERÍSTICAS === */
+        /* === CARACTERÍSTICAS (SECCIÓN CORREGIDA A 6 PUNTOS EXACTOS) === */
         .features-section { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid #222; margin-bottom: 80px; }
         .features-section h2 { font-size: 28px; margin-bottom: 25px; color: var(--app-color); border-bottom: 1px solid #333; padding-bottom: 10px; }
         .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .feature-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.5; }
-        .feature-list .material-icons { color: #00ffaa; font-size: 22px; flex-shrink: 0; }
+        .feature-list .material-icons { color: var(--app-color); font-size: 22px; flex-shrink: 0; }
 
-        /* === GALERÍA DE CAPTURAS (CORREGIDA PARA NO SER GIGANTE) === */
-        .gallery-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; /* 2 columnas exactas para que no se estiren */
-            gap: 20px; 
-            margin-bottom: 80px; 
-        }
-        .screenshot { 
-            width: 100%; 
-            aspect-ratio: 16 / 9; 
-            background: #1a1a1a; 
-            border-radius: 10px; 
-            border: 1px solid #333; 
-            display: flex; justify-content: center; align-items: center; 
-            color: #555; font-style: italic; overflow: hidden;
-        }
+        /* === GALERÍA DE CAPTURAS === */
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 80px; }
+        .screenshot { width: 100%; aspect-ratio: 16 / 9; background: #1a1a1a; border-radius: 10px; border: 1px solid #333; display: flex; justify-content: center; align-items: center; color: #555; font-style: italic; overflow: hidden; position: relative;}
         .screen-img { width: 100%; height: 100%; object-fit: cover; }
 
         /* === FAQ / LEGAL === */
-        .faq-box { padding: 30px; border-left: 4px solid var(--app-color); background: rgba(138, 43, 226, 0.05); margin-bottom: 50px; }
+        .faq-box { padding: 30px; border-left: 4px solid var(--app-color); background: rgba(78, 157, 255, 0.05); margin-bottom: 50px; }
         .faq-box h4 { margin-bottom: 10px; color: #fff; }
         .faq-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
-        /* === FOOTER (PIE DE PÁGINA ESTANDARIZADO) === */
+        /* === FOOTER === */
         footer { background: #0a0a0c; padding: 60px 20px 40px 20px; text-align: center; border-top: 1px solid #222; margin-top: 50px; }
         .support-box { margin-bottom: 40px; }
         .support-box h3 { color: #fff; font-size: 26px; margin-bottom: 15px; font-weight: 700; }
@@ -119,7 +94,7 @@
         /* RESPONSIVE MÓVIL */
         @media(max-width: 900px) {
             .app-hero { flex-direction: column; text-align: center; }
-            .gallery-grid { grid-template-columns: 1fr; /* 1 sola foto en celulares */ }
+            .gallery-grid { grid-template-columns: 1fr; }
             header { padding: 10px 20px; }
             .logo-text { font-size: 20px; }
         }
@@ -137,7 +112,6 @@
 
     <div class="app-container">
         
-        <!-- ENCABEZADO DE LA APP -->
         <div class="app-hero">
             <div class="app-info">
                 <h1 class="app-title">Facebot</h1>
@@ -145,37 +119,38 @@
                 <a href="TU_LINK_A_MEGA_AQUI" target="_blank" class="btn-download-big">
                     <span class="material-icons">download</span> Descargar Gratis (Win)
                 </a>
-                <p style="font-size: 12px; color: #666; margin-top: 15px;">* Software portable. Peso aprox: 85 MB.</p>
+                <p style="font-size: 12px; color: #666; margin-top: 15px;">* Software portable (No requiere instalación). Peso aprox: 85 MB.</p>
             </div>
             <div class="app-showcase">
-                <!-- IMAGEN 3D -->
-                <img src="img/portada-facebot.png" alt="Caja 3D" class="box-img">
+                <img src="img/portada-facebot.png" alt="Caja Facebot" class="box-img" onerror="this.style.display='none'">
             </div>
         </div>
 
         <div class="features-section">
             <h2>Características Principales</h2>
+            <!-- LA LISTA DE 6 PUNTOS (PERFECTAMENTE BALANCEADA) -->
             <ul class="feature-list">
-                <li><span class="material-icons">check_circle</span> <strong>Aniquilador de Pantallas Blancas:</strong> Inyección CSS que oscurece forzosamente la pantalla de inicio de sesión de Meta.</li>
-                <li><span class="material-icons">check_circle</span> Permite administrar páginas de negocio y perfiles falsos/privados sin riesgo de baneos por cruce de IPs/Cookies locales.</li>
-                <li><span class="material-icons">check_circle</span> Escoba de memoria RAM ultra-rápida.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Login Persistente:</strong> Inicia sesión una vez y olvídate. Tus perfiles se guardan de forma encriptada y local en la carpeta "Data" para siempre.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Aislamiento de Sitios:</strong> Evita el cruce de Cookies e IPs. Administra páginas de negocio y perfiles privados simultáneamente sin riesgo de baneos.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Carga Inteligente:</strong> Arquitectura "Lazy Load". Las pestañas no consumen recursos del procesador ni de la RAM hasta que haces clic en ellas.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Aniquilador de Blancos:</strong> Inyección CSS avanzada que oscurece forzosamente la molesta pantalla blanca de inicio de sesión de Meta.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Escoba de RAM:</strong> Botón dedicado (🧹) para "dormir" las sesiones de fondo con un solo clic y liberar memoria al instante.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Seguridad Biométrica:</strong> Protege el acceso a tus perfiles privados con un PIN de 4 dígitos personalizable directamente desde la aplicación.</li>
             </ul>
         </div>
 
-        <!-- GALERÍA DE CAPTURAS -->
         <h2 style="font-size: 28px; margin-bottom: 20px; color: #fff;">Capturas de Pantalla</h2>
         <div class="gallery-grid">
             <div class="screenshot">
-                <!-- <img src="img/captura-facebot-1.jpg" class="screen-img"> -->
-                Screenshot 1 (Interfaz Principal)
+                <img src="img/captura-facebot-1.png" class="screen-img" alt="Captura Facebot 1" onerror="this.style.display='none'">
+                <span style="position:absolute; z-index:-1;">Screenshot 1 (Interfaz Principal)</span>
             </div>
             <div class="screenshot">
-                <!-- <img src="img/captura-facebot-2.jpg" class="screen-img"> -->
-                Screenshot 2 (Mostrando la Escoba de RAM)
+                <img src="img/captura-facebot-2.png" class="screen-img" alt="Captura Facebot 2" onerror="this.style.display='none'">
+                <span style="position:absolute; z-index:-1;">Screenshot 2 (Modo Oscuro Forzado)</span>
             </div>
         </div>
 
-        <!-- === REQUISITOS DEL SISTEMA === -->
         <div class="features-section" style="padding: 0; background: transparent; border: none; margin-bottom: 50px;">
             <h2 style="font-size: 28px; margin-bottom: 20px; color: #fff; border: none;">Requisitos del Sistema</h2>
             <table class="req-table">
@@ -193,7 +168,7 @@
                 </tr>
                 <tr>
                     <td>Conexión a Internet:</td>
-                    <td>Banda ancha requerida (Para carga de multimedia)</td>
+                    <td>Banda ancha requerida</td>
                 </tr>
                 <tr>
                     <td>Instalación:</td>
@@ -202,10 +177,9 @@
             </table>
         </div>
 
-        <!-- FAQ Y LEGAL -->
         <div class="faq-box">
-            <h4>¿Requiere internet para funcionar?</h4>
-            <p>Sí, la aplicación requiere conexión a la red para acceder a las plataformas.</p>
+            <h4>¿Perderé mis sesiones si muevo la aplicación?</h4>
+            <p>No, siempre y cuando muevas la carpeta completa. El "Login Persistente" se guarda en la carpeta "Data" que está al lado de tu ejecutable. Si la borras, volverás al estado de fábrica.</p>
             
             <h4>¿Es realmente gratis?</h4>
             <p>Absolutamente. El software es proporcionado sin costo y sin anuncios invasivos. Se mantiene gracias a las donaciones voluntarias de la comunidad.</p>
@@ -216,24 +190,18 @@
 
     </div>
 
-    <!-- === FOOTER ESTANDARIZADO === -->
     <footer>
         <div class="support-box">
             <h3>¿Te sirve mi Software?</h3>
             <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si deseas apoyar el desarrollo del proyecto invitáme un cafecito.</p>
             
             <div class="footer-buttons">
-                <!-- Botón Cafecito -->
                 <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
                     <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
                 </a>
-
-                <!-- Botón Telegram -->
                 <a href="https://t.me/codigo_neuronal" target="_blank" class="btn-solid btn-telegram-solid">
                     <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
                 </a>
-
-                <!-- Botón Facebook -->
                 <a href="https://www.facebook.com/codigoneuronal" target="_blank" class="btn-solid btn-facebook-solid">
                     <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
                 </a>

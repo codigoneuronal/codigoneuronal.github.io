@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media | Código Neuronal</title>
-    <!-- Fuentes (Incluye Orbitron para el Logo) -->
+    <title>Social Media Hub | Código Neuronal</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Orbitron:wght@700;900&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
@@ -12,7 +12,7 @@
         :root {
             --bg-base: #050505; 
             --bg-card: #121212;
-            --app-color: #1877F2;; /* COLOR PRINCIPAL DE LA APP */
+            --app-color: #1877F2; /* COLOR PRINCIPAL: Azul Facebook */
             --neon-blue: #00f0ff;
             --text-main: #e0e0e0; 
             --text-muted: #aaa;
@@ -22,18 +22,19 @@
         a { text-decoration: none; color: inherit; }
 
         /* === TABLA DE REQUISITOS === */
-.req-table { width: 100%; border-collapse: collapse; background: #1a1a1a; border-radius: 8px; overflow: hidden; margin-bottom: 50px; border: 1px solid #333;}
-.req-table tr:nth-child(even) { background: #121212; }
-.req-table td { padding: 15px 20px; color: #ccc; border-bottom: 1px solid #222; font-size: 14px;}
-.req-table td:first-child { font-weight: bold; color: var(--app-color); width: 30%; border-right: 1px solid #222;}
+        .req-table { width: 100%; border-collapse: collapse; background: #1a1a1a; border-radius: 8px; overflow: hidden; margin-bottom: 50px; border: 1px solid #333;}
+        .req-table tr:nth-child(even) { background: #121212; }
+        .req-table td { padding: 15px 20px; color: #ccc; border-bottom: 1px solid #222; font-size: 14px;}
+        .req-table td:first-child { font-weight: bold; color: var(--app-color); width: 30%; border-right: 1px solid #222;}
 
-        /* === NAVBAR Y LOGO ESTANDARIZADO === */
-        header { background: rgba(18, 18, 18, 0.9); border-bottom: 1px solid #333; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; }
+        /* === NAVBAR Y LOGO === */
+        header { background: rgba(18, 18, 18, 0.9); border-bottom: 1px solid #333; padding: 8px 50px; display: flex; justify-content: space-between; align-items: center; }
         
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none;}
-        .logo-img { width: 38px; height: 38px; object-fit: contain; filter: none; }
+        
+        .logo-img { width: 48px; height: 48px; object-fit: contain; filter: none; }
         .logo-text { 
-            font-size: 25px; 
+            font-size: 30px; 
             font-weight: 900; 
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
@@ -50,45 +51,54 @@
         /* === CONTENIDO DE LA APP === */
         .app-container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
         
-        /* Layout Superior */
         .app-hero { display: flex; gap: 50px; align-items: center; margin-bottom: 80px; }
         .app-info { flex: 1; }
         .app-title { font-size: 45px; font-weight: 900; margin-bottom: 10px; color: #fff; text-shadow: 0 0 15px var(--app-color); }
         .app-subtitle { font-size: 20px; color: var(--text-muted); margin-bottom: 30px; line-height: 1.5; }
         
-        /* Botón de Descarga Gigante */
         .btn-download-big {
             display: inline-flex; align-items: center; gap: 15px;
-            background: var(--app-color); color: #fff;
+            background: var(--app-color); color: #fff; 
             padding: 18px 40px; font-size: 18px; font-weight: bold;
             border-radius: 8px; text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); transition: 0.3s;
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.4); transition: 0.3s;
         }
         .btn-download-big:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--app-color); color: #fff;}
 
-        /* Imagen Principal 3D */
         .app-showcase { flex: 1; display: flex; justify-content: center; }
-        .box-3d { width: 100%; max-width: 500px; height: 400px; background: linear-gradient(45deg, #111, #2a0845); border: 2px solid var(--app-color); border-radius: 15px; display: flex; justify-content: center; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.8); overflow: hidden; }
-        .box-img { width: 100%; height: 100%; object-fit: cover; display: none; /* Borrar display:none cuando pongas la imagen */}
+        .box-img { width: 100%; max-width: 480px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 2px solid var(--app-color); object-fit: cover; }
 
         /* === CARACTERÍSTICAS === */
         .features-section { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid #222; margin-bottom: 80px; }
         .features-section h2 { font-size: 28px; margin-bottom: 25px; color: var(--app-color); border-bottom: 1px solid #333; padding-bottom: 10px; }
         .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .feature-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.5; }
-        .feature-list .material-icons { color: #00ffaa; font-size: 22px; flex-shrink: 0; }
+        .feature-list .material-icons { color: var(--app-color); font-size: 22px; flex-shrink: 0; }
 
         /* === GALERÍA DE CAPTURAS === */
-        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 80px; }
-        .screenshot { width: 100%; height: 250px; background: #1a1a1a; border-radius: 10px; border: 1px solid #333; display: flex; justify-content: center; align-items: center; color: #555; font-style: italic; overflow: hidden;}
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+            margin-bottom: 80px; 
+        }
+        .screenshot { 
+            width: 100%; 
+            aspect-ratio: 16 / 9; 
+            background: #1a1a1a; 
+            border-radius: 10px; 
+            border: 1px solid #333; 
+            display: flex; justify-content: center; align-items: center; 
+            color: #555; font-style: italic; overflow: hidden; position: relative;
+        }
         .screen-img { width: 100%; height: 100%; object-fit: cover; }
 
         /* === FAQ / LEGAL === */
-        .faq-box { padding: 30px; border-left: 4px solid var(--app-color); background: rgba(138, 43, 226, 0.05); margin-bottom: 50px; }
+        .faq-box { padding: 30px; border-left: 4px solid var(--app-color); background: rgba(24, 119, 242, 0.05); margin-bottom: 50px; }
         .faq-box h4 { margin-bottom: 10px; color: #fff; }
         .faq-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
 
-        /* === FOOTER (PIE DE PÁGINA ESTANDARIZADO) === */
+        /* === FOOTER ESTANDARIZADO === */
         footer { background: #0a0a0c; padding: 60px 20px 40px 20px; text-align: center; border-top: 1px solid #222; margin-top: 50px; }
         .support-box { margin-bottom: 40px; }
         .support-box h3 { color: #fff; font-size: 26px; margin-bottom: 15px; font-weight: 700; }
@@ -101,9 +111,12 @@
         .copyright { font-size: 13px; color: #666; line-height: 1.6; max-width: 800px; margin: 0 auto;}
         .copyright strong { color: #888; }
 
+        /* RESPONSIVE MÓVIL */
         @media(max-width: 900px) {
             .app-hero { flex-direction: column; text-align: center; }
             .gallery-grid { grid-template-columns: 1fr; }
+            header { padding: 10px 20px; }
+            .logo-text { font-size: 20px; }
         }
     </style>
 </head>
@@ -111,114 +124,105 @@
 
     <header>
         <a href="index.html" class="logo-container">
-            <img src="logo-neuronal.png" alt="Logo" class="logo-img">
+            <img src="img/logo-neuronal.png" alt="Logo" class="logo-img">
             <div class="logo-text">Código Neuronal</div>
         </a>
         <a href="index.html" class="btn-back"><span class="material-icons">arrow_back</span> Volver al Catálogo</a>
     </header>
 
     <div class="app-container">
-    <div class="app-hero">
-        <div class="app-info">
-            <h1 class="app-title">Social Media Hub</h1>
-            <p class="app-subtitle">Todas tus redes (Facebook, X, Reddit, Pinterest, TikTok) unificadas. Entornos aislados con cuentas públicas y privadas bajo candado.</p>
-            <a href="TU_LINK_A_MEGA_AQUI" target="_blank" class="btn-download-big">
-                <span class="material-icons">download</span> Descargar Gratis (Win)
-            </a>
-            <p style="font-size: 12px; color: #666; margin-top: 15px;">* Software portable. Peso aprox: 85 MB.</p>
+        
+        <div class="app-hero">
+            <div class="app-info">
+                <h1 class="app-title">Social Media Hub</h1>
+                <p class="app-subtitle">Todas tus redes (Facebook, X, Reddit, Pinterest, TikTok) unificadas en un entorno de alto rendimiento. Gestiona cuentas públicas y privadas bajo candado sin cruzar historiales ni cookies.</p>
+                <a href="TU_LINK_A_MEGA_AQUI" target="_blank" class="btn-download-big">
+                    <span class="material-icons">download</span> Descargar Gratis (Win)
+                </a>
+                <p style="font-size: 12px; color: #666; margin-top: 15px;">* Software portable (No requiere instalación). Peso aprox: 85 MB.</p>
+            </div>
+            <div class="app-showcase">
+                <img src="img/portada-social.png" alt="Caja 3D" class="box-img" onerror="this.style.display='none'">
+            </div>
         </div>
-        <div class="app-showcase">
-         <img src="img/portada-social.png" alt="Caja 3D" style="width: 100%; max-width: 450px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 2px solid var(--app-color); object-fit: cover;">
+
+        <div class="features-section">
+            <h2>Características Principales</h2>
+            <ul class="feature-list">
+                <li><span class="material-icons">check_circle</span> <strong>Colores Dinámicos:</strong> La barra superior cambia de color mágicamente según la red social que estés visitando.</li>
+                <li><span class="material-icons">check_circle</span> <strong>Cuentas Aisladas:</strong> El modo "Privado" (Bajo candado y PIN) te permite tener una segunda sesión de Facebook, Reddit o TikTok sin que se mezclen los datos.</li>
+                <li><span class="material-icons">check_circle</span> Módulo de seguridad reforzado con protección "Anti-Crasheo" y aislamiento de memoria (Site Isolation).</li>
+                <li><span class="material-icons">check_circle</span> Herramienta de captura de pantalla nativa (formato JPEG optimizado) para guardar publicaciones o memes rápidamente.</li>
+            </ul>
         </div>
-    </div>
 
-    <div class="features-section">
-        <h2>Características Principales</h2>
-        <ul class="feature-list">
-            <li><span class="material-icons">check_circle</span> <strong>Colores Dinámicos:</strong> La interfaz cambia de color inteligentemente según la red social activa.</li>
-            <li><span class="material-icons">check_circle</span> Aislamiento de sitios (Site Isolation) deshabilitado para evitar crasheos de memoria en Facebook.</li>
-            <li><span class="material-icons">check_circle</span> <strong>Modo Oscuro Forzado:</strong> Protege tu vista incluso en sitios que no lo soportan nativamente.</li>
-            <li><span class="material-icons">check_circle</span> Capturador de pantalla nativo en JPEG de alta calidad incluido.</li>
-        </ul>
-    </div>
-</div>
-
-        <!-- GALERÍA DE CAPTURAS -->
         <h2 style="font-size: 28px; margin-bottom: 20px; color: #fff;">Capturas de Pantalla</h2>
         <div class="gallery-grid">
             <div class="screenshot">
-                Screenshot 1 (Interfaz Principal)
-                <!-- <img src="captura-jarvis-1.jpg" class="screen-img"> -->
+                <img src="img/captura-social-1.png" class="screen-img" alt="Captura 1" onerror="this.style.display='none'">
+                <span style="position:absolute; z-index:-1;">Screenshot 1 (Interfaz Principal)</span>
             </div>
             <div class="screenshot">
-                Screenshot 2 (Mostrando la Escoba de RAM)
-                <!-- <img src="captura-jarvis-2.jpg" class="screen-img"> -->
+                <img src="img/captura-social-2.png" class="screen-img" alt="Captura 2" onerror="this.style.display='none'">
+                <span style="position:absolute; z-index:-1;">Screenshot 2 (Mostrando el Candado de Privacidad)</span>
             </div>
         </div>
 
-        <!-- === REQUISITOS DEL SISTEMA === -->
-<div class="features-section" style="padding: 0; background: transparent; border: none; margin-bottom: 50px;">
-    <h2 style="font-size: 28px; margin-bottom: 20px; color: #fff; border: none;">Requisitos del Sistema</h2>
-    <table class="req-table">
-        <tr>
-            <td>Sistema Operativo:</td>
-            <td>Windows 10 / Windows 11 (64-bits)</td>
-        </tr>
-        <tr>
-            <td>Memoria RAM:</td>
-            <td>2 GB mínimo (4 GB recomendados para multitarea)</td>
-        </tr>
-        <tr>
-            <td>Almacenamiento:</td>
-            <td>150 MB (Espacio libre en disco)</td>
-        </tr>
-        <tr>
-            <td>Conexión a Internet:</td>
-            <td>Banda ancha requerida (Para streaming y sincronización)</td>
-        </tr>
-        <tr>
-            <td>Instalación:</td>
-            <td>No requiere. Software 100% Portable.</td>
-        </tr>
-    </table>
-</div>
+        <div class="features-section" style="padding: 0; background: transparent; border: none; margin-bottom: 50px;">
+            <h2 style="font-size: 28px; margin-bottom: 20px; color: #fff; border: none;">Requisitos del Sistema</h2>
+            <table class="req-table">
+                <tr>
+                    <td>Sistema Operativo:</td>
+                    <td>Windows 10 / Windows 11 (64-bits)</td>
+                </tr>
+                <tr>
+                    <td>Memoria RAM:</td>
+                    <td>2 GB mínimo (Ahorro inteligente gracias al sistema Lazy Load)</td>
+                </tr>
+                <tr>
+                    <td>Almacenamiento:</td>
+                    <td>150 MB (Espacio libre en disco)</td>
+                </tr>
+                <tr>
+                    <td>Conexión a Internet:</td>
+                    <td>Banda ancha requerida</td>
+                </tr>
+                <tr>
+                    <td>Instalación:</td>
+                    <td>No requiere. Software 100% Portable.</td>
+                </tr>
+            </table>
+        </div>
 
-        <!-- FAQ Y LEGAL -->
         <div class="faq-box">
-            <h4>¿Requiere internet para funcionar?</h4>
-            <p>Sí, las Inteligencias Artificiales requieren conexión a la red para procesar las respuestas en la nube.</p>
+            <h4>¿Cómo funcionan las cuentas privadas?</h4>
+            <p>Al tocar el ícono del candado (PIN por defecto: 0000), se revelan botones adicionales para cada red. Cada botón privado utiliza una partición de disco independiente, lo que te permite iniciar sesión con un usuario diferente al del botón público.</p>
             
             <h4>¿Es realmente gratis?</h4>
-            <p>Absolutamente. El software es proporcionado sin costo y sin anuncios invasivos. Se mantiene gracias a las donaciones voluntarias de la comunidad.</p>
+            <p>Absolutamente. El software es proporcionado sin costo. Se mantiene gracias a las donaciones voluntarias de la comunidad.</p>
 
             <h4>Aviso Legal</h4>
-            <p style="margin-bottom: 0;">Código Neuronal no altera ningún servicio oficial. Esta aplicación funciona como un entorno organizado de accesos directos web optimizados para mejorar la productividad.</p>
+            <p style="margin-bottom: 0;">Código Neuronal no altera ningún servicio oficial. Esta aplicación funciona como un entorno organizado de accesos directos web optimizados para mejorar la productividad y proteger la privacidad.</p>
         </div>
 
     </div>
 
-    <!-- === FOOTER ESTANDARIZADO === -->
     <footer>
         <div class="support-box">
             <h3>¿Te sirve mi Software?</h3>
-            <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si deseas apoyar el desarrollo del proyecto invitándome un cafecito.</p>
+            <p>Estas aplicaciones son 100% gratuitas y sin publicidad invasiva. Si deseas apoyar el desarrollo del proyecto invitáme un cafecito.</p>
             
             <div class="footer-buttons">
-    <!-- Botón Cafecito -->
-    <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
-        <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
-    </a>
-
-    <!-- Botón Telegram -->
-    <a href="https://t.me/codigo_neuronal" target="_blank" class="btn-solid btn-telegram-solid">
-        <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
-    </a>
-
-    <!-- Botón Facebook -->
-    <a href="https://www.facebook.com/codigoneuronal" target="_blank" class="btn-solid btn-facebook-solid">
-        <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
-    </a>
-</div>
+                <a href="https://cafecito.app/codigoneuronal" target="_blank" class="btn-solid btn-coffee-solid">
+                    <span class="material-icons">local_cafe</span> AYÚDAME CON UN CAFECITO
+                </a>
+                <a href="https://t.me/codigo_neuronal" target="_blank" class="btn-solid btn-telegram-solid">
+                    <span class="material-icons">telegram</span> ÚNETE A LA COMUNIDAD
+                </a>
+                <a href="https://www.facebook.com/codigoneuronal" target="_blank" class="btn-solid btn-facebook-solid">
+                    <span class="material-icons">facebook</span> SÍGUENOS EN FACEBOOK
+                </a>
+            </div>
         </div>
         
         <div class="copyright">
